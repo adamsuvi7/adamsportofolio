@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Light Mode Defaults */
+  --foreground-rgb: 15 23 42;
+  /* Slate 900 */
+  --background-start-rgb: 248 250 252;
+  /* Slate 50 */
+  --background-end-rgb: 219 234 254;
+  /* Blue 100 - slightly more blue for interest */
+
+  --card-rgb: 255 255 255;
+  --card-foreground-rgb: 15 23 42;
+
+  --muted-rgb: 241 245 249;
+  --muted-foreground-rgb: 71 85 105;
+  /* Slate 600 - darker for better contrast */
+
+  --border-rgb: 226 232 240;
+}
+
+/* Dark Mode Overrides */
+.dark {
+  --foreground-rgb: 248 250 252;
+  /* Slate 50 */
+  --background-start-rgb: 10 14 36;
+  /* Midnight */
+  --background-end-rgb: 30 58 138;
+  /* Dark Blue */
+
+  --card-rgb: 17 25 48;
+  /* Slightly lighter than midnight */
+  --card-foreground-rgb: 248 250 252;
+
+  --muted-rgb: 30 41 59;
+  --muted-foreground-rgb: 148 163 184;
+
+  --border-rgb: 51 65 85;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  min-height: 100vh;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

@@ -1,0 +1,35 @@
+
+> adam-portfolio@0.1.0 build
+> next build
+
+  ▲ Next.js 14.2.33
+  - Experiments (use with caution):
+    · turbo
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/9) ...
+   Generating static pages (2/9) 
+   Generating static pages (4/9) 
+   Generating static pages (6/9) 
+ ✓ Generating static pages (9/9)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    215 kB          364 kB
+├ ○ /_not-found                          138 B            88 kB
+├ ○ /about                               1.47 kB         134 kB
+├ ○ /certificate                         6.67 kB         138 kB
+├ ○ /contact                             5.6 kB          132 kB
+└ ○ /projects                            6.55 kB         132 kB
++ First Load JS shared by all            87.9 kB
+  ├ chunks/117-c520cd4cbf33ab9f.js       31.8 kB
+  ├ chunks/fd9d1056-8ef33f5ef9456d1f.js  53.6 kB
+  └ other shared chunks (total)          2.44 kB
+
+
+○  (Static)  prerendered as static content
+
