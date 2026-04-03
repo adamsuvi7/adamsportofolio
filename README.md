@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
 
-## Getting Started
+# 🌐 Adam Suvi — Personal Portfolio Website
 
-First, run the development server:
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Website-4F46E5?style=for-the-badge)](https://adamsuvi-portfolio.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)](https://reactjs.org)
+[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000?style=for-the-badge&logo=vercel)](https://vercel.com)
+
+A modern, responsive personal portfolio website built with Next.js featuring interactive 3D backgrounds, smooth animations, and bilingual support (English / Indonesian).
+
+![Portfolio Preview](public/preview.png)
+
+</div>
+
+---
+
+## ✨ Features
+
+- 🎨 **3D Interactive Background** — Three.js powered animated scene
+- 🌍 **Bilingual Support** — Toggle between English & Bahasa Indonesia
+- 🎞️ **Smooth Animations** — Powered by Framer Motion
+- 📱 **Fully Responsive** — Looks great on all screen sizes
+- 📄 **PDF Certificate Viewer** — Display certificates inline
+- 🌙 **Dark Mode Design** — Modern dark UI with gradient accents
+- ⚡ **Optimized Performance** — Built with Next.js 14 App Router
+
+---
+
+## 📋 Sections
+
+| Section | Description |
+|---------|-------------|
+| 🏠 **Hero** | Introduction, name, roles, and CTA |
+| 👤 **About** | Personal background & BNSP Certificate |
+| 🛠️ **Skills** | Tech stack and tools |
+| ⭐ **Featured Project** | Highlighted project showcase |
+| 🏢 **Organization** | Organizational experience |
+| 🏆 **Achievement** | Awards and accomplishments |
+| 🗂️ **Projects** | Full project gallery |
+| 📜 **Certificates** | Certifications & achievements |
+| 📬 **Contact** | Contact form and social links |
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technology |
+|----------|-----------|
+| Framework | Next.js 14 (App Router) |
+| UI Library | React 18 |
+| 3D Graphics | Three.js, @react-three/fiber, @react-three/drei |
+| Animation | Framer Motion |
+| Styling | Tailwind CSS |
+| Icons | Lucide React |
+| PDF Viewer | react-pdf, pdfjs-dist |
+| Deployment | Vercel |
+
+---
+
+## 🚀 Getting Started (Local Development)
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/adamsuvi7/adam-portfolio.git
+
+# Navigate to project directory
+cd adam-portfolio
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+adam-portfolio/
+├── app/
+│   ├── components/      # Reusable UI components
+│   │   ├── Hero.jsx
+│   │   ├── About.jsx
+│   │   ├── Skills.jsx
+│   │   ├── Projects.jsx
+│   │   ├── Contact.jsx
+│   │   └── ...
+│   ├── context/         # Global state (language toggle)
+│   ├── page.jsx         # Main page
+│   └── layout.js        # Root layout
+├── public/              # Static assets
+└── package.json
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🌐 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is deployed on **Vercel**. Every push to the `main` branch triggers an automatic deployment.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/adamsuvi7/adam-portfolio)
+
+---
+
+## 📬 Contact
+
+**Adam Suvi**
+- 📧 Email: adamsuvi7@gmail.com
+- 🐙 GitHub: [@adamsuvi7](https://github.com/adamsuvi7)
+
+---
+
+<div align="center">
+Made with ❤️ by Adam Suvi
+</div>

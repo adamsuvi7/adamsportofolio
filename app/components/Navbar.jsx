@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import LanguageToggle from './LanguageToggle';
-import ThemeToggle from './ThemeToggle';
+
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -50,13 +50,13 @@ const Navbar = () => {
                         </div>
                         <div className="flex items-center gap-4">
                             <LanguageToggle />
-                            <ThemeToggle />
+
                         </div>
                     </div>
 
                     <div className="md:hidden flex items-center gap-4">
                         <LanguageToggle />
-                        <ThemeToggle />
+
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             className="text-softGray hover:text-foreground p-2"

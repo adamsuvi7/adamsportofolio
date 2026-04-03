@@ -52,6 +52,11 @@ export const translations = {
                 collaboration: "Team Collaboration",
             }
         },
+        featured_project: {
+            section_title: "Presentation",
+            heading: "Featured Portfolio",
+            description: "Explore my comprehensive data analyst portfolio, showcasing projects and analytical capabilities.",
+        },
         organization: {
             section_title: "Leadership",
             heading: "Organization Experience",
@@ -122,18 +127,30 @@ export const translations = {
                 {
                     title: "Sales Transaction EDA",
                     description: "Exploratory Data Analysis on 10,000+ sales records to identify trends, customer segmentation, and revenue drivers.",
+                    tools: ["Python", "Pandas", "SQL"],
+                    link: "https://docs.google.com/presentation/d/1OhkWJtOviRRaek3CUG8PeWmw73GwBmWE/edit?usp=sharing&ouid=115974012460813639436&rtpof=true&sd=true",
+                    icon: "BarChart2"
                 },
                 {
                     title: "Ethereum Price Prediction (ANN)",
                     description: "Application of Artificial Neural Network (ANN) to predict Ethereum prices based on historical data, analyzing trends and model accuracy.",
+                    tools: ["Python", "ANN", "TensorFlow"],
+                    link: "https://docs.google.com/presentation/d/10yzplBokg8Egs4yhYrM-CcIheQgH2lmv/edit?usp=sharing&ouid=115974012460813639436&rtpof=true&sd=true",
+                    icon: "BarChart2"
                 },
                 {
                     title: "Business Mapping",
                     description: "Business data mapping and visualization using Excel and Canva to ensure clarity and strategic insight.",
+                    tools: ["Excel", "Canva"],
+                    link: "https://docs.google.com/spreadsheets/d/1yutTtek2XKtyA8UvRoHOnVKXrh9VTgNN/edit?usp=sharing&ouid=115974012460813639436&rtpof=true&sd=true",
+                    icon: "Database"
                 },
                 {
                     title: "DKI Jakarta Sales Report",
                     description: "Comprehensive sales report for DKI Jakarta using Power BI, Power Query, and Pivot Table.",
+                    tools: ["Power BI", "Power Query", "Pivot Table"],
+                    link: "https://drive.google.com/file/d/1Lz0gB_dI838XXy2kTRsmHHXItyzEbhOi/view?usp=sharing",
+                    icon: "FileText"
                 }
             ]
         },
@@ -144,20 +161,44 @@ export const translations = {
             items: [
                 {
                     title: "Google Data Analytics",
-                    description: "Comprehensive curriculum covering data cleaning, analysis, visualization, and R programming."
+                    description: "Comprehensive curriculum covering data cleaning, analysis, visualization, and R programming.",
+                    issuer: "Coursera",
+                    date: "2025",
+                    link: "https://drive.google.com/file/d/14tTx-6vFko1_ytB_pHZlpKBJkUkJfFts/view?usp=sharing",
+                    logo: "/images/logos/google.png"
                 },
                 {
                     title: "Bootcamp Data Analyst",
-                    description: "Intensive training in SQL, Python, and business intelligence tools with real-world projects."
+                    description: "Intensive training in SQL, Python, and business intelligence tools with real-world projects.",
+                    issuer: "Harisenin.com",
+                    date: "2025",
+                    logo: "/images/logos/harisenin.png"
                 },
                 {
                     title: "Meta Data Analyst",
-                    description: "Professional certificate covering data analysis, Python, SQL, and Tableau."
+                    description: "Professional certificate covering data analysis, Python, SQL, and Tableau.",
+                    issuer: "Coursera",
+                    date: "2025",
+                    link: "https://drive.google.com/file/d/1mnwMZgoMKqZDESQxj8YW4E1PtdI131LA/view?usp=sharing",
+                    logo: "/images/logos/meta.png"
                 },
                 {
                     title: "Syntaxnesia Training Centre",
-                    description: "Professional certification from Syntaxnesia Training Centre for Data Analyst profession, recognized by BNSP."
+                    description: "Professional certification from Syntaxnesia Training Centre for Data Analyst profession, recognized by BNSP.",
+                    issuer: "Syntaxnesia",
+                    date: "2025",
+                    link: "https://drive.google.com/file/d/1I3eoumEZpdAZxgMhvDbDA8x8VzNAA9PO/view?usp=sharing",
+                    logo: "/images/logos/syntaxnesia.png"
                 }
+            ],
+            all_list: [
+                "Coursera 4H7XIYGCL5U9.pdf", "Coursera 677FP4197JD1.pdf", "Coursera B6X8ZEXQ39SV.pdf",
+                "Coursera BC16M9BJS8Y2.pdf", "Coursera F0HU5TFM1C57.pdf", "Coursera GCZN5DKUT9NP.pdf",
+                "Coursera HY2BP9S3I96P.pdf", "Coursera KR4G69WZTYUC.pdf", "Coursera PVUV5YU90F8U.pdf",
+                "Coursera Q1NJ7YDEFRHI.pdf", "Coursera Q4PJK8GK4Y0B.pdf", "Coursera SXWIYT0PW7AB.pdf",
+                "Coursera TK9DF11ZVPI9.pdf", "Coursera X88K1F494A87.pdf", "GOOGLE- DATA DRIVEN.pdf",
+                "META CERTIFICATE.pdf", "MICROSOFT CERTIFICATE.pdf", "SERTIFIKAT COURSERA GOOGLE.pdf",
+                "SERTIFIKAT COURSSERA DATA ANLYST.pdf"
             ]
         },
         contact: {
@@ -226,6 +267,11 @@ export const translations = {
                 detail: "Ketelitian",
                 collaboration: "Kerjasama Tim",
             }
+        },
+        featured_project: {
+            section_title: "Presentasi",
+            heading: "Portofolio Unggulan",
+            description: "Jelajahi portofolio data analyst saya secara lengkap, menampilkan proyek dan kemampuan analisis.",
         },
         organization: {
             section_title: "Kepemimpinan",
@@ -297,18 +343,30 @@ export const translations = {
                 {
                     title: "Sales Transaction EDA",
                     description: "Exploratory Data Analysis pada 10.000+ data penjualan untuk mengidentifikasi tren, segmentasi pelanggan, dan pendorong pendapatan.",
+                    tools: ["Python", "Pandas", "SQL"],
+                    link: "https://docs.google.com/presentation/d/1OhkWJtOviRRaek3CUG8PeWmw73GwBmWE/edit?usp=sharing&ouid=115974012460813639436&rtpof=true&sd=true",
+                    icon: "BarChart2"
                 },
                 {
                     title: "Prediksi Harga Ethereum (ANN)",
                     description: "Penerapan Artificial Neural Network (ANN) dalam Prediksi Harga Ethereum Berbasis Data Historis untuk analisis tren dan peramalan akurat.",
+                    tools: ["Python", "ANN", "TensorFlow"],
+                    link: "https://docs.google.com/presentation/d/10yzplBokg8Egs4yhYrM-CcIheQgH2lmv/edit?usp=sharing&ouid=115974012460813639436&rtpof=true&sd=true",
+                    icon: "BarChart2"
                 },
                 {
                     title: "Mapping Bisnis",
                     description: "Pemetaan dan visualisasi data bisnis menggunakan Excel dan Canva untuk memastikan kejelasan dan wawasan strategis.",
+                    tools: ["Excel", "Canva"],
+                    link: "https://docs.google.com/spreadsheets/d/1yutTtek2XKtyA8UvRoHOnVKXrh9VTgNN/edit?usp=sharing&ouid=115974012460813639436&rtpof=true&sd=true",
+                    icon: "Database"
                 },
                 {
                     title: "DKI Jakarta Sales Report",
                     description: "Laporan penjualan komprehensif wilayah DKI Jakarta menggunakan Power BI, Power Query, dan Pivot Table.",
+                    tools: ["Power BI", "Power Query", "Pivot Table"],
+                    link: "https://drive.google.com/file/d/1Lz0gB_dI838XXy2kTRsmHHXItyzEbhOi/view?usp=sharing",
+                    icon: "FileText"
                 }
             ]
         },
@@ -319,20 +377,44 @@ export const translations = {
             items: [
                 {
                     title: "Google Data Analytics",
-                    description: "Kurikulum komprehensif mencakup pembersihan data, analisis, visualisasi, dan pemrograman R."
+                    description: "Kurikulum komprehensif mencakup pembersihan data, analisis, visualisasi, dan pemrograman R.",
+                    issuer: "Coursera",
+                    date: "2025",
+                    link: "https://drive.google.com/file/d/14tTx-6vFko1_ytB_pHZlpKBJkUkJfFts/view?usp=sharing",
+                    logo: "/images/logos/google.png"
                 },
                 {
                     title: "Bootcamp Data Analyst",
-                    description: "Pelatihan intensif SQL, Python, dan alat business intelligence dengan proyek dunia nyata."
+                    description: "Pelatihan intensif SQL, Python, dan alat business intelligence dengan proyek dunia nyata.",
+                    issuer: "Harisenin.com",
+                    date: "2025",
+                    logo: "/images/logos/harisenin.png"
                 },
                 {
                     title: "Meta Data Analyst",
-                    description: "Sertifikasi profesional mencakup analisis data, Python, SQL, dan Tableau."
+                    description: "Sertifikasi profesional mencakup analisis data, Python, SQL, dan Tableau.",
+                    issuer: "Coursera",
+                    date: "2025",
+                    link: "https://drive.google.com/file/d/1mnwMZgoMKqZDESQxj8YW4E1PtdI131LA/view?usp=sharing",
+                    logo: "/images/logos/meta.png"
                 },
                 {
                     title: "Syntaxnesia Training Centre",
-                    description: "Sertifikasi profesional dari Syntaxnesia Training Centre untuk profesi Data Analyst yang diakui oleh BNSP."
+                    description: "Sertifikasi profesional dari Syntaxnesia Training Centre untuk profesi Data Analyst yang diakui oleh BNSP.",
+                    issuer: "Syntaxnesia",
+                    date: "2025",
+                    link: "https://drive.google.com/file/d/1I3eoumEZpdAZxgMhvDbDA8x8VzNAA9PO/view?usp=sharing",
+                    logo: "/images/logos/syntaxnesia.png"
                 }
+            ],
+            all_list: [
+                "Coursera 4H7XIYGCL5U9.pdf", "Coursera 677FP4197JD1.pdf", "Coursera B6X8ZEXQ39SV.pdf",
+                "Coursera BC16M9BJS8Y2.pdf", "Coursera F0HU5TFM1C57.pdf", "Coursera GCZN5DKUT9NP.pdf",
+                "Coursera HY2BP9S3I96P.pdf", "Coursera KR4G69WZTYUC.pdf", "Coursera PVUV5YU90F8U.pdf",
+                "Coursera Q1NJ7YDEFRHI.pdf", "Coursera Q4PJK8GK4Y0B.pdf", "Coursera SXWIYT0PW7AB.pdf",
+                "Coursera TK9DF11ZVPI9.pdf", "Coursera X88K1F494A87.pdf", "GOOGLE- DATA DRIVEN.pdf",
+                "META CERTIFICATE.pdf", "MICROSOFT CERTIFICATE.pdf", "SERTIFIKAT COURSERA GOOGLE.pdf",
+                "SERTIFIKAT COURSSERA DATA ANLYST.pdf"
             ]
         },
         contact: {

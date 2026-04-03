@@ -75,13 +75,13 @@ const Hero = () => {
                     </motion.h2>
                     <motion.h1
                         variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-                        className="text-5xl md:text-7xl font-heading font-bold text-foreground mb-6 tracking-tight"
+                        className="text-4xl md:text-7xl font-heading font-bold text-foreground mb-6 tracking-tight"
                     >
                         Adam Suvi, S.Si., C.DA
                     </motion.h1>
                     <motion.h3
                         variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-                        className="text-2xl md:text-3xl text-softGray mb-8 font-light"
+                        className="text-xl md:text-3xl text-softGray mb-8 font-light"
                     >
                         {t.hero.role}
                     </motion.h3>
@@ -123,7 +123,7 @@ const Hero = () => {
                         className="flex flex-col sm:flex-row items-center justify-center gap-4"
                     >
                         <Link
-                            href="#about"
+                            href="#featured-project"
                             className="px-8 py-3 bg-sky hover:bg-blue-600 text-white rounded-full font-medium transition-all shadow-lg shadow-sky/25 flex items-center gap-2"
                         >
                             {t.hero.cta_portfolio} <ArrowRight size={20} />
