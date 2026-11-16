@@ -1,10 +1,11 @@
 // Language-independent facts: contact details, links, tool logos, certificate files.
-// Contact details follow the latest CV — edit them here and they update everywhere.
+// Contact details: edit them here and they update everywhere. Email is the address Adam chose
+// for the site; the rest follows the latest CV.
 
 export const site = {
     name: "Adam Suvi",
     url: "https://adamsportofolio.netlify.app",
-    email: "adamsuvi@gmail.com",
+    email: "adamsuvi7@gmail.com",
     phoneDisplay: "+62 821-7162-5816",
     whatsapp: "https://wa.me/6282171625816",
     linkedin: "https://linkedin.com/in/adam-suvi",
