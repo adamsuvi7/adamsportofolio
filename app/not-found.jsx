@@ -1,15 +1,13 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function NotFound() {
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-midnight text-white p-4">
-            <h2 className="text-3xl font-bold mb-4 text-sky">404 - Not Found</h2>
-            <p className="mb-8 text-gray-300">Could not find requested resource</p>
-            <Link
-                href="/"
-                className="px-6 py-3 bg-sky hover:bg-blue-600 rounded-full transition-colors font-medium"
-            >
-                Return Home
+        <div className="hero flex min-h-screen flex-col items-center justify-center px-5 text-center text-white">
+            <p className="kicker text-lavender-300">404</p>
+            <h1 className="display mt-4 text-5xl md:text-7xl">Halaman tidak ditemukan</h1>
+            <p className="mt-4 text-periwinkle-200">Tautan ini tidak mengarah ke mana pun. / This link leads nowhere.</p>
+            <Link href="/" className="btn btn-primary mt-8">
+                Kembali ke beranda
             </Link>
         </div>
     );

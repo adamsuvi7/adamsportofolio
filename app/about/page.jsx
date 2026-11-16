@@ -1,22 +1,18 @@
 import About from "../components/About";
 import Skills from "../components/Skills";
-import Organization from "../components/Organization";
-import Achievement from "../components/Achievement";
-import BnspCertificate from "../components/BnspCertificate";
+import Experience from "../components/Experience";
 
 export const metadata = {
-    title: "About | Adam Suvi",
-    description: "Learn more about Adam Suvi's background, skills, and experience.",
+    title: "Profil",
+    description: "Latar belakang, keahlian, dan pengalaman Adam Suvi sebagai Data Analyst.",
 };
 
 export default function AboutPage() {
     return (
-        <div className="pt-16">
+        <div className="pt-[var(--nav-h)]">
             <About />
             <Skills />
-            <Organization />
-            <Achievement />
-            <BnspCertificate />
+            <Experience />
         </div>
     );
 }

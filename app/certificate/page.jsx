@@ -1,14 +1,14 @@
-import Certificates from "../components/Certificates";
+import Credentials from "../components/Credentials";
 
 export const metadata = {
-    title: "Certificates | Adam Suvi",
-    description: "Professional certificates and training completed by Adam Suvi.",
+    title: "Kredensial",
+    description: "Pendidikan, sertifikasi BNSP, dan sertifikat kursus Adam Suvi.",
 };
 
 export default function CertificatePage() {
     return (
-        <div className="pt-16">
-            <Certificates />
+        <div className="pt-[var(--nav-h)]">
+            <Credentials />
         </div>
     );
 }

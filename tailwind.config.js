@@ -1,35 +1,28 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./app/**/*.{js,jsx,mdx}"],
   theme: {
     extend: {
       colors: {
-        midnight: "rgb(var(--background-start-rgb) / <alpha-value>)",
-        royal: "#1E3A8A",
-        sky: "#3B82F6",
-        softWhite: "rgb(var(--foreground-rgb) / <alpha-value>)",
-        softGray: "rgb(var(--muted-foreground-rgb) / <alpha-value>)",
-
-        background: "rgb(var(--background-start-rgb) / <alpha-value>)",
-        foreground: "rgb(var(--foreground-rgb) / <alpha-value>)",
-
-        card: "rgb(var(--card-rgb) / <alpha-value>)",
-        "card-foreground": "rgb(var(--card-foreground-rgb) / <alpha-value>)",
-
-        muted: "rgb(var(--muted-rgb) / <alpha-value>)",
-        "muted-foreground": "rgb(var(--muted-foreground-rgb) / <alpha-value>)",
-
-        border: "rgb(var(--border-rgb) / <alpha-value>)",
+        // Deep Trust
+        deep: { DEFAULT: "#14123A", 950: "#0B0A24", 900: "#100E30", 800: "#14123A", 700: "#1D1A52", 600: "#2A2672", 500: "#3A3596" },
+        // Electric Lavender
+        lavender: { DEFAULT: "#9B6CFF", 200: "#DDD0FF", 300: "#C6B0FF", 400: "#AE8AFF", 500: "#9B6CFF", 600: "#7F4DF2", 700: "#6335CF" },
+        // Frosted Periwinkle
+        periwinkle: { DEFAULT: "#C7CEFF", 100: "#E8EBFF", 200: "#D9DEFF", 300: "#C7CEFF", 400: "#A9B3FA", 500: "#8792EE" },
+        // Airy Calm
+        airy: { DEFAULT: "#F3F5FF", 50: "#FAFBFF", 100: "#F3F5FF" },
+        ink: { DEFAULT: "#14123A", soft: "#4A4876", faint: "#6F6D97" },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'sans-serif'],
-        heading: ['var(--font-poppins)', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans Variable"', "system-ui", "sans-serif"],
+        display: ['"Bricolage Grotesque Variable"', '"Plus Jakarta Sans Variable"', "system-ui", "sans-serif"],
+        mono: ['"JetBrains Mono Variable"', "ui-monospace", "monospace"],
+      },
+      maxWidth: { page: "76rem" },
+      boxShadow: {
+        frost: "0 1px 0 rgba(255,255,255,.8) inset, 0 12px 32px -16px rgba(42,38,114,.28)",
+        lift: "0 24px 48px -24px rgba(42,38,114,.38)",
       },
     },
   },

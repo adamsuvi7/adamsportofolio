@@ -1,26 +1,21 @@
 "use client";
+import { ArrowUp } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
-const Footer = () => {
+export default function Footer() {
     const { t } = useLanguage();
 
     return (
-        <footer className="bg-midnight border-t border-gray-800 py-8">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <p className="text-softGray">
-                    &copy; {new Date().getFullYear()} Adam Suvi. {t.footer.rights}
+        <footer className="border-t border-white/10 bg-deep-950 py-7 text-periwinkle-300">
+            <div className="page flex flex-col items-start justify-between gap-4 text-sm sm:flex-row sm:items-center">
+                <p>
+                    © {new Date().getFullYear()} Adam Suvi · Jakarta, Indonesia
+                    <span className="mt-1 block font-mono text-[0.72rem] text-periwinkle-400/80">{t.footer.note}</span>
                 </p>
-                <div className="mt-4 flex justify-center space-x-6">
-                    <a href="https://linkedin.com/in/adam-suvi7" target="_blank" rel="noopener noreferrer" className="text-softGray hover:text-sky transition-colors">
-                        LinkedIn
-                    </a>
-                    <a href="mailto:adamsuvi7@gmail.com" className="text-softGray hover:text-sky transition-colors">
-                        Email
-                    </a>
-                </div>
+                <a href="#top" className="chip border-white/20 py-2 text-white transition-colors hover:border-white/60 hover:bg-white/10">
+                    {t.footer.top} <ArrowUp size={15} />
+                </a>
             </div>
         </footer>
     );
-};
-
-export default Footer;
+}

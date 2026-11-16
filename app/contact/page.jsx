@@ -1,13 +1,13 @@
 import Contact from "../components/Contact";
 
 export const metadata = {
-    title: "Contact | Adam Suvi",
-    description: "Get in touch with Adam Suvi for data analysis opportunities.",
+    title: "Kontak",
+    description: "Hubungi Adam Suvi untuk peluang Data Analyst dan proyek lepas.",
 };
 
 export default function ContactPage() {
     return (
-        <div className="pt-16">
+        <div className="bg-airy pt-[calc(var(--nav-h)+2rem)]">
             <Contact />
         </div>
     );

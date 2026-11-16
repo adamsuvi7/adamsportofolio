@@ -1,13 +1,13 @@
 import Projects from "../components/Projects";
 
 export const metadata = {
-    title: "Projects | Adam Suvi",
-    description: "Explore data analysis and visualization projects by Adam Suvi.",
+    title: "Proyek",
+    description: "Proyek analisis data dan pengembangan oleh Adam Suvi.",
 };
 
 export default function ProjectsPage() {
     return (
-        <div className="pt-16">
+        <div className="bg-deep-900 pt-[var(--nav-h)]">
             <Projects />
         </div>
     );

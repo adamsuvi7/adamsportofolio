@@ -1,30 +1,25 @@
 "use client";
 import { useLanguage } from "../context/LanguageContext";
-import { motion } from "framer-motion";
 
-const LanguageToggle = () => {
-    const { language, toggleLanguage } = useLanguage();
+export default function LanguageToggle({ onDark = false }) {
+    const { language, toggleLanguage, t } = useLanguage();
 
     return (
         <button
+            type="button"
             onClick={toggleLanguage}
-            className="relative flex items-center bg-gray-800 rounded-full p-1 w-16 h-8 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky/50"
-            aria-label="Toggle Language"
+            aria-label={t.a11y.language}
+            className={`relative flex h-9 items-center rounded-full border p-1 font-mono text-[0.72rem] font-semibold transition-colors ${
+                onDark ? "border-white/25 text-white" : "border-deep/15 text-ink"
+            }`}
         >
-            <motion.div
-                className="absolute w-6 h-6 bg-sky rounded-full shadow-md z-10"
-                layout
-                transition={{ type: "spring", stiffness: 700, damping: 30 }}
-                animate={{ x: language === 'en' ? 32 : 0 }}
+            <span
+                className="absolute left-1 top-1 h-[calc(100%-0.5rem)] w-9 rounded-full bg-lavender-500 transition-transform duration-300 ease-out"
+                style={{ transform: language === "en" ? "translateX(2.25rem)" : "translateX(0)" }}
+                aria-hidden="true"
             />
-            <span className={`absolute left-2 text-[10px] font-bold z-0 transition-colors ${language === 'id' ? 'text-white' : 'text-gray-500'}`}>
-                ID
-            </span>
-            <span className={`absolute right-2 text-[10px] font-bold z-0 transition-colors ${language === 'en' ? 'text-white' : 'text-gray-500'}`}>
-                EN
-            </span>
+            <span className={`relative z-10 w-9 text-center transition-colors ${language === "id" ? "text-white" : ""}`}>ID</span>
+            <span className={`relative z-10 w-9 text-center transition-colors ${language === "en" ? "text-white" : ""}`}>EN</span>
         </button>
     );
-};
-
-export default LanguageToggle;
+}
