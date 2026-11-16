@@ -3,8 +3,6 @@ import "@fontsource-variable/bricolage-grotesque/wdth.css";
 import "@fontsource-variable/plus-jakarta-sans";
 import "@fontsource-variable/jetbrains-mono";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import { LanguageProvider } from "./context/LanguageContext";
 import { site } from "./data/site";
 
@@ -30,7 +28,7 @@ export const metadata = {
 };
 
 export const viewport = {
-    themeColor: "#14123A",
+    themeColor: "#0B0B0E",
 };
 
 export default function RootLayout({ children }) {
@@ -41,11 +39,7 @@ export default function RootLayout({ children }) {
                 <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
             </head>
             <body>
-                <LanguageProvider>
-                    <Navbar />
-                    <main id="konten">{children}</main>
-                    <Footer />
-                </LanguageProvider>
+                <LanguageProvider>{children}</LanguageProvider>
                 <Script src="https://www.googletagmanager.com/gtag/js?id=G-590PHNHFH5" strategy="afterInteractive" />
                 <Script id="google-analytics" strategy="afterInteractive">
                     {`

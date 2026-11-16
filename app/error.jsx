@@ -7,10 +7,10 @@ export default function Error({ error, reset }) {
     }, [error]);
 
     return (
-        <div className="hero flex min-h-screen flex-col items-center justify-center px-5 text-center text-white">
-            <h1 className="display text-4xl md:text-6xl">Terjadi kesalahan</h1>
-            <p className="mt-4 text-periwinkle-200">Halaman gagal dimuat. Coba muat ulang.</p>
-            <button type="button" onClick={() => reset()} className="btn btn-primary mt-8">
+        <div className="flex min-h-screen flex-col items-center justify-center px-5 text-center">
+            <h1 className="h2">Terjadi kesalahan</h1>
+            <p className="muted mt-3">Halaman gagal dimuat. Coba muat ulang.</p>
+            <button type="button" onClick={() => reset()} className="btn btn-light mt-6" style={{ paddingRight: 18 }}>
                 Coba lagi
             </button>
         </div>

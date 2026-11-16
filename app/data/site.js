@@ -47,6 +47,16 @@ export const links = {
     certBnsp: "https://drive.google.com/file/d/1I3eoumEZpdAZxgMhvDbDA8x8VzNAA9PO/view?usp=sharing",
 };
 
+// Embeddable versions of the documents, for the on-page viewer.
+export const viewerDocs = {
+    deck: { embed: "https://drive.google.com/file/d/1j3Fh-_j168q1GVOYvQ6VWE5KWZJxDWsN/preview", href: links.deck },
+    superstore: { embed: "https://drive.google.com/file/d/1Cm_-bsMYUczeW80qkhNNgX2xxKJhqsP9/preview", href: links.superstore },
+    dki: { embed: "https://drive.google.com/file/d/1Lz0gB_dI838XXy2kTRsmHHXItyzEbhOi/preview", href: links.dkiReport },
+    eda: { embed: "https://docs.google.com/presentation/d/1OhkWJtOviRRaek3CUG8PeWmw73GwBmWE/preview", href: links.salesEda },
+    ethereum: { embed: "https://docs.google.com/presentation/d/10yzplBokg8Egs4yhYrM-CcIheQgH2lmv/preview", href: links.ethereum },
+    mapping: { embed: "https://docs.google.com/spreadsheets/d/1yutTtek2XKtyA8UvRoHOnVKXrh9VTgNN/preview", href: links.businessMapping },
+};
+
 // The 19 course certificates in /public/certificates, titled from the PDFs themselves.
 export const courseCertificates = [
     { file: "Coursera Q4PJK8GK4Y0B.pdf", thumb: "coursera-q4pjk8gk4y0b", title: "Google Data Analytics Professional Certificate", by: "Google", featured: true },

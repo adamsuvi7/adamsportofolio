@@ -2,13 +2,14 @@
 import { links } from "./site";
 
 const id = {
-    nav: { profile: "Profil", skills: "Keahlian", projects: "Proyek", experience: "Pengalaman", credentials: "Kredensial", contact: "Kontak" },
+    nav: { profile: "Profil", skills: "Keahlian", projects: "Proyek", documents: "Dokumen", experience: "Pengalaman", credentials: "Kredensial", contact: "Kontak" },
     hero: {
         eyebrow: "Data Analyst · Jakarta, Indonesia",
         lede: "Lulusan Matematika yang bekerja dengan SQL, Python, R, dan Power BI. Saya membersihkan data penjualan, mencari polanya, lalu membangun dashboard yang dipakai untuk keputusan sehari-hari.",
         ctaProjects: "Lihat proyek",
         ctaCv: "Unduh CV",
         certified: "Tersertifikasi BNSP · Google · Meta",
+        hint: "Grafik 3D ini bereaksi: gerakkan kursor, klik, atau gulir.",
         stats: [
             { value: 10000, suffix: "+", label: "transaksi penjualan dianalisis" },
             { value: 700, suffix: "+", label: "data rumah tangga diverifikasi untuk BPS" },
@@ -41,7 +42,7 @@ const id = {
     skills: {
         title: "Keahlian",
         heading: "Perangkat yang saya pakai.",
-        intro: "Dikelompokkan seperti di CV. Sentuh atau arahkan kursor ke kartu untuk melihat apa saja yang saya kerjakan dengan tiap alat.",
+        intro: "Lima belas alat dalam empat kelompok, seperti di CV.",
         groups: [
             {
                 name: "SQL",
@@ -261,18 +262,52 @@ const id = {
         emailLabel: "Email",
         portraitAlt: "Adam Suvi mengenakan jas",
     },
+    profile: {
+        title: "Profil",
+        scroll: "Data Analyst tersertifikasi BNSP, Google, dan Meta dengan latar Matematika. Saya mengerjakan analisis dari awal sampai akhir: kueri di SQL, eksplorasi di Python dan R, lalu dashboard di Power BI, Tableau, atau Excel.",
+    },
+    viewer: {
+        title: "Dokumen",
+        heading: "Baca langsung portofolio dan laporannya.",
+        intro: "Pilih dokumen, lalu gulir di dalam bingkai. Semuanya terbuka di halaman ini.",
+        open: "Buka di tab baru",
+        loading: "Memuat dokumen…",
+        docs: [
+            { key: "deck", name: "Deck portofolio", kind: "PDF" },
+            { key: "superstore", name: "Analisis Pelanggan Superstore", kind: "PDF" },
+            { key: "dki", name: "DKI Jakarta Sales Report", kind: "PDF" },
+            { key: "eda", name: "Sales Transaction EDA", kind: "Slide" },
+            { key: "ethereum", name: "Prediksi Harga Ethereum (ANN)", kind: "Slide" },
+            { key: "mapping", name: "Mapping Bisnis", kind: "Sheet" },
+        ],
+    },
+    stats: {
+        title: "Angka",
+        heading: "Hasil yang bisa dihitung.",
+        note: "Semua angka berasal dari CV.",
+        items: [
+            { to: 10000, suffix: "+", label: "transaksi penjualan dibersihkan dan dianalisis" },
+            { to: 700, suffix: "+", label: "data rumah tangga diverifikasi untuk Sensus Ekonomi 2026" },
+            { to: 80, suffix: "+", label: "pengurus organisasi dipimpin" },
+            { to: 40, suffix: "%", label: "kenaikan partisipasi program BEM FMIPA" },
+            { to: 91, suffix: "", label: "nilai akhir bootcamp Data Analyst (A)" },
+            { to: 560, suffix: "", label: "skor TOEFL" },
+        ],
+    },
+    ui: { details: "Rincian", close: "Tutup", view: "Lihat", flip: "Balik", viewPdf: "Buka PDF", loading: "Memuat" },
     footer: { note: "Dibangun dengan Next.js, Three.js, dan anime.js.", top: "Kembali ke atas" },
     a11y: { menu: "Buka menu", closeMenu: "Tutup menu", language: "Ganti bahasa ke Inggris", skip: "Lompat ke konten" },
 };
 
 const en = {
-    nav: { profile: "Profile", skills: "Skills", projects: "Projects", experience: "Experience", credentials: "Credentials", contact: "Contact" },
+    nav: { profile: "Profile", skills: "Skills", projects: "Projects", documents: "Documents", experience: "Experience", credentials: "Credentials", contact: "Contact" },
     hero: {
         eyebrow: "Data Analyst · Jakarta, Indonesia",
         lede: "A Mathematics graduate working in SQL, Python, R, and Power BI. I clean sales data, find the patterns in it, and build the dashboards people use to make everyday decisions.",
         ctaProjects: "See projects",
         ctaCv: "Download CV",
         certified: "Certified by BNSP · Google · Meta",
+        hint: "The 3D chart reacts: move the cursor, click, or scroll.",
         stats: [
             { value: 10000, suffix: "+", label: "sales transactions analysed" },
             { value: 700, suffix: "+", label: "household records verified for BPS" },
@@ -305,7 +340,7 @@ const en = {
     skills: {
         title: "Skills",
         heading: "The tools I work with.",
-        intro: "Grouped the way my CV groups them. Hover or tap a card to see what I do with each tool.",
+        intro: "Fifteen tools in four groups, as on my CV.",
         groups: [
             {
                 name: "SQL",
@@ -525,6 +560,39 @@ const en = {
         emailLabel: "Email",
         portraitAlt: "Adam Suvi in a suit",
     },
+    profile: {
+        title: "Profile",
+        scroll: "A Data Analyst certified by BNSP, Google, and Meta, trained in Mathematics. I take an analysis from start to finish: queries in SQL, exploration in Python and R, then dashboards in Power BI, Tableau, or Excel.",
+    },
+    viewer: {
+        title: "Documents",
+        heading: "Read the portfolio and reports right here.",
+        intro: "Pick a document, then scroll inside the frame. Everything opens on this page.",
+        open: "Open in a new tab",
+        loading: "Loading document…",
+        docs: [
+            { key: "deck", name: "Portfolio deck", kind: "PDF" },
+            { key: "superstore", name: "Superstore Customer Analysis", kind: "PDF" },
+            { key: "dki", name: "DKI Jakarta Sales Report", kind: "PDF" },
+            { key: "eda", name: "Sales Transaction EDA", kind: "Slides" },
+            { key: "ethereum", name: "Ethereum Price Prediction (ANN)", kind: "Slides" },
+            { key: "mapping", name: "Business Mapping", kind: "Sheet" },
+        ],
+    },
+    stats: {
+        title: "Numbers",
+        heading: "Results you can count.",
+        note: "Every figure comes from the CV.",
+        items: [
+            { to: 10000, suffix: "+", label: "sales transactions cleaned and analysed" },
+            { to: 700, suffix: "+", label: "household records verified for the 2026 Economic Census" },
+            { to: 80, suffix: "+", label: "organisation members led" },
+            { to: 40, suffix: "%", label: "rise in BEM FMIPA programme participation" },
+            { to: 91, suffix: "", label: "final grade, Data Analyst bootcamp (A)" },
+            { to: 560, suffix: "", label: "TOEFL score" },
+        ],
+    },
+    ui: { details: "Details", close: "Close", view: "View", flip: "Flip", viewPdf: "Open PDF", loading: "Loading" },
     footer: { note: "Built with Next.js, Three.js, and anime.js.", top: "Back to top" },
     a11y: { menu: "Open menu", closeMenu: "Close menu", language: "Switch language to Indonesian", skip: "Skip to content" },
 };
