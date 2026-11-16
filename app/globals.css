@@ -1713,3 +1713,335 @@ a.cert:hover {
     padding: 48px 0;
   }
 }
+
+/* ---------- app showcase: device frames ---------- */
+.apps-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: clamp(18px, 2.4vw, 28px);
+}
+.apps-tab {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(20, 20, 25, 0.7);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+.apps-tab small {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0;
+  color: var(--accent);
+}
+.apps-tab[aria-selected="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #000;
+}
+.apps-tab[aria-selected="true"] small {
+  color: #000;
+}
+.apps-grid {
+  display: grid;
+  gap: 28px 44px;
+}
+@media (min-width: 980px) {
+  .apps-grid {
+    grid-template-columns: 0.82fr 1.3fr;
+    align-items: center;
+  }
+}
+.apps-copy h3 {
+  font-family: var(--display);
+  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+.apps-tagline {
+  margin-top: 8px;
+  max-width: 34ch;
+  color: var(--muted);
+}
+.apps-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin: 16px 0;
+}
+.apps-facts > div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2px;
+  padding: 9px 10px;
+  border-radius: 12px;
+  background: rgba(20, 20, 25, 0.72);
+}
+.apps-facts dd {
+  font-family: var(--display);
+  font-size: clamp(1.05rem, 1.7vw, 1.45rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  color: var(--accent);
+}
+.apps-facts dt {
+  font-size: 10.5px;
+  line-height: 1.25;
+  color: var(--muted);
+}
+.apps-points {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(242, 238, 228, 0.86);
+}
+.apps-points li {
+  position: relative;
+  padding-left: 16px;
+}
+.apps-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 9px;
+  height: 1px;
+  background: var(--accent);
+}
+.apps-stack {
+  margin: 14px 0 12px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.work-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+}
+.apps-stage {
+  perspective: 1500px;
+}
+.apps-devices {
+  position: relative;
+  padding: 0 0 7% 17%;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transform-style: preserve-3d;
+  transition: transform 0.5s var(--ease);
+}
+.apps-picks {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+}
+.apps-picks > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+.apps-picks span {
+  min-width: 7.4em;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.apps-picks .chip {
+  background: rgba(20, 20, 25, 0.7);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.apps-picks .chip:hover {
+  border-color: rgba(242, 238, 228, 0.4);
+}
+.apps-picks .chip[aria-pressed="true"] {
+  background: var(--fg);
+  border-color: var(--fg);
+  color: var(--ink);
+}
+.screen-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  animation: screen-in 0.55s var(--ease);
+}
+@keyframes screen-in {
+  from {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+}
+
+/* MacBook */
+.laptop {
+  container-type: inline-size;
+  width: 100%;
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.55));
+}
+.laptop-lid {
+  position: relative;
+  margin: 0 6.5%;
+  padding: 1.5cqw 1.5cqw 1.9cqw;
+  border-radius: 2.1cqw 2.1cqw 0 0;
+  background: #0c0c0f;
+  border: 0.22cqw solid #3a3a40;
+  border-bottom: 0;
+}
+.laptop-notch {
+  position: absolute;
+  left: 50%;
+  top: 1.5cqw;
+  z-index: 2;
+  width: 11cqw;
+  height: 1.5cqw;
+  translate: -50% 0;
+  border-radius: 0 0 0.9cqw 0.9cqw;
+  background: #0c0c0f;
+}
+.laptop-screen {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 0.5cqw;
+  background: #111;
+}
+.laptop-base {
+  position: relative;
+  height: 2.3cqw;
+  border-radius: 0.3cqw 0.3cqw 2cqw 2cqw;
+  background: linear-gradient(180deg, #d9dadd 0%, #a9abb0 45%, #6e7075 100%);
+}
+.laptop-base i {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 14cqw;
+  height: 0.9cqw;
+  translate: -50% 0;
+  border-radius: 0 0 1cqw 1cqw;
+  background: #8b8d92;
+}
+
+/* iPhone Pro Max */
+.phone {
+  container-type: inline-size;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  width: 27%;
+  filter: drop-shadow(0 24px 30px rgba(0, 0, 0, 0.6));
+}
+.phone-body {
+  padding: 2.6cqw;
+  border-radius: 15.5cqw;
+  background: linear-gradient(145deg, #5b5c61, #2b2c30 30%, #17181b 60%, #4a4b50);
+  box-shadow: inset 0 0 0 0.5cqw #0b0b0d, inset 0 0 0 1cqw rgba(255, 255, 255, 0.08);
+}
+.phone-screen {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 440 / 956;
+  border-radius: 13cqw;
+}
+.phone-screen .screen-img {
+  margin-top: 11.5cqw;
+}
+.phone-status {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 2;
+  height: 11.5cqw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6cqw 7.5cqw 0 9.5cqw;
+  font-size: 4cqw;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.phone-status svg {
+  width: 15.5cqw;
+}
+.phone-island {
+  position: absolute;
+  left: 50%;
+  top: 3.3cqw;
+  width: 27cqw;
+  height: 7.6cqw;
+  translate: -50% 0;
+  border-radius: 99px;
+  background: #000;
+}
+.phone-home {
+  position: absolute;
+  left: 50%;
+  bottom: 1.9cqw;
+  z-index: 2;
+  width: 32cqw;
+  height: 1.15cqw;
+  translate: -50% 0;
+  border-radius: 99px;
+  opacity: 0.85;
+}
+.phone-btn {
+  position: absolute;
+  z-index: -1;
+  width: 1.2cqw;
+  border-radius: 1cqw;
+  background: #3a3b40;
+}
+.phone-btn-l1 { left: -0.9cqw; top: 26%; height: 5.5%; }
+.phone-btn-l2 { left: -0.9cqw; top: 34%; height: 9%; }
+.phone-btn-r { right: -0.9cqw; top: 31%; height: 13%; }
+/* Phones: the iPhone leads at a readable size, the MacBook follows below, and both come before the text */
+@media (max-width: 639px) {
+  .apps-devices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    padding: 0;
+  }
+  .phone {
+    position: relative;
+    order: -1;
+    width: 64%;
+  }
+  .apps-stage {
+    order: -1;
+  }
+  .apps-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Documents kept as page images */
+.viewer-pages {
+  overflow-y: auto;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding: 12px;
+  overscroll-behavior: contain;
+}
+.viewer-pages img {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 6px;
+  background: #f3f3f0;
+}

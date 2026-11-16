@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Profile from "./components/Profile";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Apps from "./components/Apps";
 import Viewer from "./components/Viewer";
 import Experience from "./components/Experience";
 import Stats from "./components/Stats";
@@ -22,6 +23,7 @@ export default function Home() {
                 <Profile />
                 <Skills />
                 <Projects />
+                <Apps />
                 <Viewer />
                 <Experience />
                 <Stats />

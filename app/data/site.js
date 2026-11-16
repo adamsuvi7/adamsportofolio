@@ -51,6 +51,8 @@ export const links = {
 // Embeddable versions of the documents, for the on-page viewer.
 export const viewerDocs = {
     deck: { embed: "https://drive.google.com/file/d/1j3Fh-_j168q1GVOYvQ6VWE5KWZJxDWsN/preview", href: links.deck },
+    // Shown as page images (works on phones, where a PDF cannot be embedded); `href` is the PDF itself.
+    pos: { pages: 24, dir: "/docs/sne-pos", href: "/docs/SNE-POS-Portofolio-Adam-Suvi.pdf" },
     superstore: { embed: "https://drive.google.com/file/d/1Cm_-bsMYUczeW80qkhNNgX2xxKJhqsP9/preview", href: links.superstore },
     dki: { embed: "https://drive.google.com/file/d/1Lz0gB_dI838XXy2kTRsmHHXItyzEbhOi/preview", href: links.dkiReport },
     eda: { embed: "https://docs.google.com/presentation/d/1OhkWJtOviRRaek3CUG8PeWmw73GwBmWE/preview", href: links.salesEda },
@@ -80,3 +82,11 @@ export const courseCertificates = [
     { file: "Coursera Q1NJ7YDEFRHI.pdf", thumb: "coursera-q1nj7ydefrhi", title: "Harnessing the Power of Data with Power BI", by: "Microsoft" },
     { file: "SERTIFIKAT COURSSERA DATA ANLYST.pdf", thumb: "sertifikat-courssera-data-anlyst", title: "Introduction to Data Analytics", by: "IBM" },
 ];
+
+// Screens for the app showcase. File names under /public/apps/<key>/; labels live in content.js, in the same order.
+// `bar` is the colour of the app's top edge, used for the phone's status bar.
+export const appShots = {
+    pos: { bar: "#ffffff", dark: false, phone: ["beranda", "kasir", "stok", "kas", "kota", "transaksi"], laptop: ["beranda", "kota", "stok", "laporan"] },
+    kinetz: { bar: "#0f1110", dark: true, phone: ["history", "home", "home2", "diet", "studio"], laptop: ["home", "studio", "ride"] },
+    studio: { bar: "#ffffff", dark: false, phone: ["kanvas", "teks", "foto", "template"], laptop: ["editor", "template2"] },
+};

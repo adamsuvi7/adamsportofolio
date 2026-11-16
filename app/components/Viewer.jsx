@@ -5,7 +5,7 @@ import { viewerDocs } from "../data/site";
 import { Label, Words } from "./ui";
 
 /** A framed, scrollable document. `data-lenis-prevent` lets the wheel scroll the document, not the page. */
-function DocFrame({ name, embed, href, openLabel, waitLabel, load = true }) {
+function DocFrame({ name, embed, pages, dir, href, openLabel, waitLabel, load = true }) {
     return (
         <div className="viewer-frame">
             <div className="viewer-bar">
@@ -19,10 +19,20 @@ function DocFrame({ name, embed, href, openLabel, waitLabel, load = true }) {
                     {openLabel} ↗
                 </a>
             </div>
-            <div className="viewer-screen" data-lenis-prevent>
-                <p className="viewer-wait">{waitLabel}</p>
-                {load && <iframe key={embed} src={embed} title={name} loading="lazy" allow="autoplay; fullscreen" allowFullScreen />}
-            </div>
+            {pages ? (
+                // A document kept as page images: scrolls like a PDF and works on phones too.
+                <div className="viewer-screen viewer-pages" data-lenis-prevent tabIndex={0} key={dir}>
+                    {load &&
+                        Array.from({ length: pages }, (_, i) => (
+                            <img key={i} src={`${dir}/${String(i + 1).padStart(2, "0")}.webp`} alt={`${name}, ${i + 1} / ${pages}`} width="1334" height="943" loading="lazy" />
+                        ))}
+                </div>
+            ) : (
+                <div className="viewer-screen" data-lenis-prevent>
+                    <p className="viewer-wait">{waitLabel}</p>
+                    {load && <iframe key={embed} src={embed} title={name} loading="lazy" allow="autoplay; fullscreen" allowFullScreen />}
+                </div>
+            )}
         </div>
     );
 }
@@ -79,7 +89,7 @@ export default function Viewer() {
                     ))}
                 </div>
                 <div data-reveal="up" role="tabpanel">
-                    <DocFrame name={doc.name} embed={viewerDocs[doc.key].embed} href={viewerDocs[doc.key].href} openLabel={v.open} waitLabel={v.loading} load={near} />
+                    <DocFrame name={doc.name} {...viewerDocs[doc.key]} openLabel={v.open} waitLabel={v.loading} load={near} />
                 </div>
             </div>
         </section>

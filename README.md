@@ -16,7 +16,8 @@ light sections are frosted cream glass laid over it. The bars follow the cursor 
 | Profil | Summary that lights up word by word on scroll, portrait, key facts |
 | Keahlian | All 15 tools with logos and the analysis methods, in one screen |
 | Proyek | Four CV projects in an expandable list; a chart preview follows the cursor |
-| Dokumen | Embedded viewer for the portfolio deck and reports (Google Drive previews) |
+| Aplikasi | Real screenshots of SNE POS, KINETZ, and SNE Studio inside iPhone and MacBook frames |
+| Dokumen | Embedded viewer for the portfolio deck, the SNE POS project deck, and reports |
 | Pengalaman | Work history, leadership roles, other activities |
 | Angka | Six figures from the CV |
 | Kredensial | BNSP certificate (flips front/back), education, certifications, 19 course certificates |
@@ -50,6 +51,7 @@ They are CSS variables at the top of `app/globals.css`; the 3D colours are at th
 | Any text, in either language | `app/data/content.js` |
 | Email, phone, social links, CV file, document links | `app/data/site.js` |
 | Documents in the viewer | `viewerDocs` in `app/data/site.js` and `viewer.docs` in `app/data/content.js` |
+| App showcase screens | Images in `public/apps/<app>/`, listed in `appShots` in `app/data/site.js`; labels and copy in `apps` in `app/data/content.js` |
 | Tool logos | `public/logos/` and the `tools` map in `app/data/site.js` |
 | Course certificates | `public/certificates/` (PDF, `thumbs/`, `full/`) and `courseCertificates` in `app/data/site.js` |
 | Where the 3D model sits in each section | `POSES` in `app/lib/stage.js` |
@@ -76,6 +78,7 @@ app/
 │   ├── Navbar.jsx, LanguageToggle.jsx, Footer.jsx
 │   ├── Hero.jsx, Profile.jsx, Skills.jsx
 │   ├── Projects.jsx, ProjectViz.jsx   # list + one SVG chart per project
+│   ├── Apps.jsx, Devices.jsx          # app showcase in CSS-built iPhone and MacBook frames
 │   ├── Viewer.jsx        # embedded documents
 │   ├── Experience.jsx, Stats.jsx, Credentials.jsx, Contact.jsx
 │   └── ui.jsx            # Words, Button, Magnetic, Label, ScrollText
@@ -87,6 +90,11 @@ app/
 ├── layout.js, page.jsx, globals.css
 public/                   # images, logos, certificates, CV
 ```
+
+## About the app screenshots
+
+The screens in the Aplikasi section were captured from the apps themselves, running locally on generated data.
+Every figure, shop name, route, and log entry in them is simulated; none of it is real customer or personal data.
 
 ## Credits
 

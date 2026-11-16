@@ -107,11 +107,18 @@ export default function Projects() {
                                                     </span>
                                                 ))}
                                             </div>
-                                            {project.link && (
-                                                <p>
-                                                    <a className="text-link" href="#dokumen" onClick={() => window.dispatchEvent(new CustomEvent("viewer:open", { detail: project.key }))}>
-                                                        {project.link.label} ↓
-                                                    </a>
+                                            {(project.link || project.key === "pos" || project.key === "kinetz") && (
+                                                <p className="work-links">
+                                                    {(project.key === "pos" || project.key === "kinetz") && (
+                                                        <a className="text-link" href="#aplikasi" onClick={() => window.dispatchEvent(new CustomEvent("apps:open", { detail: project.key }))}>
+                                                            {t.ui.preview} ↓
+                                                        </a>
+                                                    )}
+                                                    {(project.link || project.key === "pos") && (
+                                                        <a className="text-link" href="#dokumen" onClick={() => window.dispatchEvent(new CustomEvent("viewer:open", { detail: project.key }))}>
+                                                            {project.link ? project.link.label : t.apps.deck} ↓
+                                                        </a>
+                                                    )}
                                                 </p>
                                             )}
                                             <InlineChart project={project} open={isOpen} />
