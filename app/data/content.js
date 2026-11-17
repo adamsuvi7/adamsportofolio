@@ -168,7 +168,7 @@ const id = {
             {
                 role: "Juara 2 (1st Runner-up) Duta Genre",
                 org: "Forum Genre Kota Bukittinggi · DP3APPKB",
-                period: "Duta Generasi Berencana",
+                period: "Mar 2020 · Duta Generasi Berencana",
                 album: "genre",
                 points: [
                     "Mewakili pemuda dalam kampanye edukasi dan advokasi tingkat kota di bawah DP3APPKB.",
@@ -507,7 +507,7 @@ const en = {
             {
                 role: "1st Runner-up, Genre Ambassador",
                 org: "Genre Forum, Bukittinggi · DP3APPKB",
-                period: "Youth planning ambassador",
+                period: "Mar 2020 · Youth planning ambassador",
                 album: "genre",
                 points: [
                     "Represented young people in city-wide education and advocacy campaigns under DP3APPKB.",
