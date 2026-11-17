@@ -20,7 +20,7 @@ export const POSES = {
     hero:    { x: 1.75, y: -0.1,  ry: -0.62, rx: 0.52, cam: 7.4, tint: 0.05, set: 0 },
     profile: { x: 1.95, y: -0.25, ry: 0.4,   rx: 0.66, cam: 5.6, tint: 0.3,  set: 2 },
     work:    { x: 2.1,  y: -0.15, ry: 1.25,  rx: 0.48, cam: 6.8, tint: 0.45, set: 1 },
-    apps:    { x: -3.6, y: -1.9,  ry: 1.9,   rx: 0.5,  cam: 10.5, tint: 0.2, set: 2 },
+    apps:    { x: 3.1,  y: 1.45,  ry: 1.9,   rx: 0.62, cam: 11,   tint: 0.35, set: 1 },
     process: { x: -2.25, y: -0.95, ry: 2.5,  rx: 0.5,  cam: 7.4, tint: 1.0,  set: 3 },
     stats:   { x: 0.0,  y: -1.45, ry: 3.9,   rx: 0.34, cam: 8.6, tint: 0.6,  set: 0 },
     cta:     { x: 1.85, y: -0.2,  ry: 5.66,  rx: 0.52, cam: 6.2, tint: 0.1,  set: 2 },

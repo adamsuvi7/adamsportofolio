@@ -110,27 +110,36 @@ export function useReveal(rootRef, deps = [], enabled = true) {
 
         nodes.forEach((n) => n.hasAttribute("data-viz") && prepViz(n));
 
+        const play = (el) => {
+            const delay = Number(el.dataset.revealDelay || 0);
+            if (el.hasAttribute("data-reveal-group")) playGroup(el, delay);
+            else if (el.hasAttribute("data-reveal")) {
+                el.style.opacity = "0";
+                (presets[el.dataset.reveal] || presets.up)(el, delay);
+            }
+            if (el.hasAttribute("data-words")) playWords(el, delay);
+            if (el.hasAttribute("data-viz")) playViz(el);
+            if (el.hasAttribute("data-count")) countUp(el);
+            el.classList.add("is-in");
+        };
+
         const io = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (!entry.isIntersecting) return;
-                    const el = entry.target;
-                    io.unobserve(el);
-                    const delay = Number(el.dataset.revealDelay || 0);
-                    if (el.hasAttribute("data-reveal-group")) playGroup(el, delay);
-                    else if (el.hasAttribute("data-reveal")) {
-                        el.style.opacity = "0";
-                        (presets[el.dataset.reveal] || presets.up)(el, delay);
-                    }
-                    if (el.hasAttribute("data-words")) playWords(el, delay);
-                    if (el.hasAttribute("data-viz")) playViz(el);
-                    if (el.hasAttribute("data-count")) countUp(el);
-                    el.classList.add("is-in");
+                    io.unobserve(entry.target);
+                    play(entry.target);
                 });
             },
             { rootMargin: "0px 0px -12% 0px", threshold: 0.12 }
         );
-        nodes.forEach((n) => io.observe(n));
+        // Anything already on screen when this runs plays straight away. Waiting for the observer left an
+        // element in the bottom strip of the first screen (inside the -12% margin) hidden until the first scroll.
+        const onScreen = (n) => {
+            const r = n.getBoundingClientRect();
+            return r.bottom > 0 && r.top < window.innerHeight;
+        };
+        nodes.forEach((n) => (onScreen(n) ? play(n) : io.observe(n)));
         return () => io.disconnect();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, deps);

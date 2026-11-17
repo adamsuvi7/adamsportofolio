@@ -1,11 +1,29 @@
 "use client";
+import { useState } from "react";
+import { Images } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import { gallery } from "../data/site";
+import Gallery from "./Gallery";
 import { Label, Words } from "./ui";
 
 export default function Experience() {
     const { t } = useLanguage();
     const x = t.experience;
     const openDoc = (key) => () => window.dispatchEvent(new CustomEvent("viewer:open", { detail: key }));
+    // A fresh object each time, so asking for the same album twice still re-selects it.
+    const [wanted, setWanted] = useState(null);
+    const showAlbum = (key) => () => {
+        setWanted({ key });
+        document.getElementById("galeri")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+    const AlbumLink = ({ album }) => {
+        const n = gallery.filter((p) => p.album === album).length;
+        return n ? (
+            <button type="button" className="text-link album-link" onClick={showAlbum(album)}>
+                <Images size={13} aria-hidden="true" /> {x.albums[album]} · {n} {x.photos}
+            </button>
+        ) : null;
+    };
 
     return (
         <section id="pengalaman" className="dark" data-scene="process">
@@ -60,6 +78,9 @@ export default function Experience() {
                                     <h3>{item.role}</h3>
                                     <p>{item.org}</p>
                                     <p className="step-text">{item.text}</p>
+                                    <p className="step-links">
+                                        <AlbumLink album={item.album} />
+                                    </p>
                                 </div>
                                 <img src={item.image} alt={item.alt} width="1000" height="666" loading="lazy" />
                             </div>
@@ -67,15 +88,33 @@ export default function Experience() {
                     ))}
 
                     <p className="sub-label">{x.moreTitle}</p>
-                    <ul className="more-list" data-reveal="up">
-                        {x.more.map((item, i) => (
-                            <li key={i}>
-                                <b>{item.role}</b>
-                                <span className="muted">{item.text}</span>
-                            </li>
-                        ))}
-                    </ul>
+                    {x.more.map((item, i) => (
+                        <article key={i} className="glass step spot" data-reveal="up">
+                            <div className="step-top">
+                                <span>{item.period}</span>
+                                <span>0{i + 5}</span>
+                            </div>
+                            <div className="step-main">
+                                <div>
+                                    <h3>{item.role}</h3>
+                                    <p>{item.org}</p>
+                                    <ul>
+                                        {item.points.map((point, k) => (
+                                            <li key={k}>{point}</li>
+                                        ))}
+                                    </ul>
+                                    <p className="step-links">
+                                        <AlbumLink album={item.album} />
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    ))}
                 </div>
+            </div>
+            <div className="container" id="galeri">
+                <p className="sub-label gallery-label">{x.galleryTitle}</p>
+                <Gallery album={wanted} />
             </div>
         </section>
     );

@@ -81,7 +81,7 @@ export default function Apps() {
     const openDeck = () => window.dispatchEvent(new CustomEvent("viewer:open", { detail: "pos" }));
 
     return (
-        <section id="aplikasi" className="dark apps" data-scene="apps">
+        <section id="proyek" className="dark apps" data-scene="apps">
             <div className="container">
                 <Label>{a.title}</Label>
                 <div className="split-head">
@@ -119,6 +119,7 @@ export default function Apps() {
                                 <li key={i}>{point}</li>
                             ))}
                         </ul>
+                        {app.note && <p className="apps-note">{app.note}</p>}
                         <p className="apps-stack mono">{app.stack}</p>
                         {app.key === "pos" && (
                             <p>
@@ -153,6 +154,20 @@ export default function Apps() {
                             </div>
                         </div>
                     </div>
+                </div>
+
+                {/* The one CV project that is analysis rather than an app */}
+                <div className="apps-analytics glass spot" data-reveal="up">
+                    <p className="label">{a.analyticsTitle}</p>
+                    <div>
+                        <h3>
+                            {a.analytics.name} <small>{a.analytics.period}</small>
+                        </h3>
+                        <p>{a.analytics.text}</p>
+                    </div>
+                    <a className="text-link" href="#dokumen" onClick={() => window.dispatchEvent(new CustomEvent("viewer:open", { detail: "superstore" }))}>
+                        {a.analytics.link} ↓
+                    </a>
                 </div>
             </div>
         </section>

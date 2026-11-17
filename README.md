@@ -15,10 +15,9 @@ light sections are frosted cream glass laid over it. The bars follow the cursor 
 | Hero | Name, role, one-paragraph summary |
 | Profil | Summary that lights up word by word on scroll, portrait, key facts |
 | Keahlian | All 15 tools with logos and the analysis methods, in one screen |
-| Proyek | Four CV projects in an expandable list; a chart preview follows the cursor |
-| Aplikasi | Real screenshots of SNE POS, KINETZ, and SNE Studio inside iPhone and MacBook frames |
+| Proyek | SNE POS, KINETZ, DEX Momentum, and SNE Studio as real screenshots in iPhone and MacBook frames, plus the Superstore analytics project |
 | Dokumen | Embedded viewer for the portfolio deck, the SNE POS project deck, and reports |
-| Pengalaman | Work history, leadership roles, other activities |
+| Pengalaman | Work history, leadership roles, other activities in full, and an activity photo gallery styled as a photo app on a MacBook |
 | Angka | Six figures from the CV |
 | Kredensial | BNSP certificate (flips front/back), education, certifications, 19 course certificates |
 | Kontak | Email, WhatsApp, LinkedIn, GitHub, Instagram |
@@ -54,6 +53,7 @@ They are CSS variables at the top of `app/globals.css`; the 3D colours are at th
 | App showcase screens | Images in `public/apps/<app>/`, listed in `appShots` in `app/data/site.js`; labels and copy in `apps` in `app/data/content.js` |
 | Tool logos | `public/logos/` and the `tools` map in `app/data/site.js` |
 | Course certificates | `public/certificates/` (PDF, `thumbs/`, `full/`) and `courseCertificates` in `app/data/site.js` |
+| Activity gallery photos | Put the file in `public/img/galeri/<album>/` and add a line to `gallery` in `app/data/site.js` (albums are named in `experience.albums` in `app/data/content.js`) |
 | Where the 3D model sits in each section | `POSES` in `app/lib/stage.js` |
 | The CV behind the download button | `public/Adam_Suvi_CV_Data_Analyst.pdf` |
 
@@ -77,10 +77,10 @@ app/
 │   ├── Shell.jsx         # 3D canvas, loader, custom cursor, smooth scroll, reveals
 │   ├── Navbar.jsx, LanguageToggle.jsx, Footer.jsx
 │   ├── Hero.jsx, Profile.jsx, Skills.jsx
-│   ├── Projects.jsx, ProjectViz.jsx   # list + one SVG chart per project
 │   ├── Apps.jsx, Devices.jsx          # app showcase in CSS-built iPhone and MacBook frames
 │   ├── Viewer.jsx        # embedded documents
-│   ├── Experience.jsx, Stats.jsx, Credentials.jsx, Contact.jsx
+│   ├── Experience.jsx, Gallery.jsx    # work, leadership, activities, photo gallery
+│   ├── Stats.jsx, Credentials.jsx, Contact.jsx
 │   └── ui.jsx            # Words, Button, Magnetic, Label, ScrollText
 ├── context/LanguageContext.js
 ├── data/                 # content.js, site.js, brandPaths.js

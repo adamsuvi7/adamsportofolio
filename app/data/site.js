@@ -88,5 +88,17 @@ export const courseCertificates = [
 export const appShots = {
     pos: { bar: "#ffffff", dark: false, phone: ["beranda", "kasir", "stok", "kas", "kota", "transaksi"], laptop: ["beranda", "kota", "stok", "laporan"] },
     kinetz: { bar: "#0f1110", dark: true, phone: ["history", "home", "home2", "diet", "studio"], laptop: ["home", "studio", "ride"] },
+    dex: { bar: "#0f141b", dark: true, phone: ["dashboard", "dashboard-2", "meteora", "trade", "trade-2"], laptop: ["dashboard", "dashboard-2", "meteora", "trade"] },
     studio: { bar: "#ffffff", dark: false, phone: ["kanvas", "teks", "foto", "template"], laptop: ["editor", "template2"] },
 };
+
+// Activity gallery. To add a photo: put it in /public/img/galeri/<album>/ and add a line here.
+// `album` must be one of the keys in `experience.albums` (content.js). `caption` is shown in the enlarged view.
+export const gallery = [
+    { album: "bem", src: "/img/org-bem.webp", w: 1000, h: 666, caption: "Pengurus BEM FMIPA Universitas Andalas" },
+    { album: "himatika", src: "/img/org-himatika.webp", w: 1000, h: 666, caption: "Tim Pengembangan SDM HIMATIKA" },
+    { album: "lkmmtd", src: "/img/org-lkmmtd.webp", w: 1000, h: 515, caption: "Peserta LKMMTD di ruang kuliah" },
+    { album: "kkn", src: "/img/org-kkn.webp", w: 1000, h: 750, caption: "Tim KKN-PPM Universitas Andalas 2024" },
+    { album: "genre", src: "/img/org-genre.webp", w: 1000, h: 666, caption: "Malam penobatan Duta Genre Kota Bukittinggi" },
+    { album: "genre", src: "/img/duta-genre.webp", w: 890, h: 606, caption: "Juara 2 Duta Genre Kota Bukittinggi" },
+];
