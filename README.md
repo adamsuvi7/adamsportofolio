@@ -1,135 +1,105 @@
-<div align="center">
+# Adam Suvi · Data Analyst portfolio
 
-# 🌐 Adam Suvi, S.Si., C.DA — Personal Portfolio Website
+Source for [adamsportofolio.netlify.app](https://adamsportofolio.netlify.app), the portfolio of Adam Suvi, S.Si., C.DA.
+The site is one page, bilingual (Indonesian by default, English on toggle), and its content follows the latest CV.
 
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-adamsportofolio.netlify.app-4F8EF7?style=for-the-badge)](https://adamsportofolio.netlify.app)
-[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
-[![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js)](https://threejs.org)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer)](https://www.framer.com/motion)
-[![Netlify](https://img.shields.io/badge/Deployed_on-Netlify-00C7B7?style=for-the-badge&logo=netlify)](https://netlify.com)
+## How the page works
 
-A modern, responsive **Data Analyst portfolio** website built with Next.js featuring interactive 3D backgrounds, smooth animations, and full bilingual support (🇬🇧 English / 🇮🇩 Bahasa Indonesia).
-
-</div>
-
----
-
-## ✨ Features
-
-- 🌍 **Bilingual Support** — Toggle between English & Bahasa Indonesia
-- 🎨 **3D Interactive Background** — Three.js powered animated particle scene
-- 🎞️ **Smooth Animations** — Powered by Framer Motion
-- 📱 **Fully Responsive** — Optimized for all screen sizes
-- 📄 **PDF Certificate Viewer** — Display BNSP & other certificates inline
-- 🌙 **Dark/Light Mode** — Modern adaptive UI design
-- ⚡ **Optimized Performance** — Built with Next.js 14 App Router
-
----
-
-## 📋 Sections
+A single 3D stage sits fixed behind the whole page. Its model is a block of data: a slab carrying a grid of bars.
+As you scroll, the model glides to a new pose for each section and reshapes its bars into a different dataset
+(sales trend, Pareto, normal distribution, raw data). Dark sections are transparent, so the stage shows through;
+light sections are frosted cream glass laid over it. The bars follow the cursor and ripple on a click.
 
 | Section | Content |
-|---------|---------|
-| 🏠 **Hero** | Name (Adam Suvi, S.Si., C.DA), role, tagline |
-| 👤 **About** | Background, education (Universitas Andalas - Mathematics) |
-| 📜 **BNSP Certificate** | BNSP Certified Data Analyst certificate viewer |
-| 🛠️ **Skills** | SQL, Python, Power BI, Tableau, Excel, TensorFlow, etc. |
-| ⭐ **Featured Project** | Superstore Customer Analyst |
-| 🏢 **Organization** | BEM FMIPA UNAND, LKMMTD, HIMATIKA UNAND |
-| 🏆 **Achievement** | 1st Runner-Up Duta Genre Kota Bukittinggi |
-| 🗂️ **Projects** | Full project gallery (EDA, ANN, Sales Reports, etc.) |
-| 📜 **Certificates** | BNSP, Google, Meta, Harisenin certifications |
-| 📬 **Contact** | Email, LinkedIn, WhatsApp, Instagram |
+|---|---|
+| Hero | Name, role, one-paragraph summary |
+| Profil | Summary that lights up word by word on scroll, portrait, key facts |
+| Keahlian | All 15 tools with logos and the analysis methods, in one screen |
+| Proyek | SNE POS, KINETZ, DEX Momentum, and SNE Studio as real screenshots in iPhone and MacBook frames, plus the Superstore analytics project |
+| Dokumen | Embedded viewer for the portfolio deck, the SNE POS project deck, and reports |
+| Pengalaman | Work history, leadership roles, other activities in full, and an activity photo gallery styled as a photo app on a MacBook |
+| Angka | Six figures from the CV |
+| Kredensial | BNSP certificate (flips front/back), education, certifications, 19 course certificates |
+| Kontak | Email, WhatsApp, LinkedIn, GitHub, Instagram |
 
----
+## Stack
 
-## 🛠️ Tech Stack
+- Next.js 14 (App Router, static export) and React 18
+- Three.js for the stage, with bloom post-processing (`app/lib/stage.js`)
+- anime.js v4 for the bar morphing, scroll reveals, word-by-word headings, SVG chart drawing, counters (`app/lib/motion.js`)
+- Lenis for smooth scrolling
+- Tailwind CSS for the reset; the design itself is plain CSS in `app/globals.css`
+- Fonts self-hosted through Fontsource: Bricolage Grotesque, Plus Jakarta Sans, JetBrains Mono
+- Deployed on Netlify (`netlify.toml`: `npm run build`, publish `out/`)
 
-| Category | Technology |
-|----------|-----------|
-| Framework | Next.js 14 (App Router) |
-| UI Library | React 18 |
-| 3D Graphics | Three.js, @react-three/fiber, @react-three/drei |
-| Animation | Framer Motion |
-| Styling | Tailwind CSS |
-| Icons | Lucide React |
-| PDF Viewer | react-pdf, pdfjs-dist |
-| Deployment | Netlify |
+## Palette: Arang & Jingga
 
----
+| Role | Hex |
+|---|---|
+| Charcoal background | `#0B0B0E` |
+| Cream text and light sections | `#F2EEE4` |
+| Orange accent | `#FF6B1A` |
+| Steel blue, secondary mood | `#6C9BC9` |
 
-## 🚀 Getting Started (Local Development)
+They are CSS variables at the top of `app/globals.css`; the 3D colours are at the top of `app/lib/stage.js`.
 
-### Prerequisites
-- Node.js 18+
-- npm
+## Editing content
 
-### Installation
+| To change | Edit |
+|---|---|
+| Any text, in either language | `app/data/content.js` |
+| Email, phone, social links, CV file, document links | `app/data/site.js` |
+| Documents in the viewer | `viewerDocs` in `app/data/site.js` and `viewer.docs` in `app/data/content.js` |
+| App showcase screens | Images in `public/apps/<app>/`, listed in `appShots` in `app/data/site.js`; labels and copy in `apps` in `app/data/content.js` |
+| Tool logos | `public/logos/` and the `tools` map in `app/data/site.js` |
+| Course certificates | `public/certificates/` (PDF, `thumbs/`, `full/`) and `courseCertificates` in `app/data/site.js` |
+| Activity gallery photos | Put the file in `public/img/galeri/<album>/` and add a line to `gallery` in `app/data/site.js` (albums are named in `experience.albums` in `app/data/content.js`) |
+| Where the 3D model sits in each section | `POSES` in `app/lib/stage.js` |
+| The CV behind the download button | `public/Adam_Suvi_CV_Data_Analyst.pdf` |
+
+## Run locally
 
 ```bash
-# Clone the repository
-git clone https://github.com/adamsuvi7/adamsportofolio.git
-
-# Navigate to project directory
-cd adamsportofolio
-
-# Install dependencies
 npm install
+```
 
-# Run development server
+```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Then open http://localhost:3000. `npm run build` writes the static site to `out/`.
 
----
-
-## 📁 Project Structure
+## Structure
 
 ```
-adamsportofolio/
-├── app/
-│   ├── components/
-│   │   ├── Hero.jsx            # Hero section with name & roles
-│   │   ├── About.jsx           # About & education background
-│   │   ├── BnspCertificate.jsx # BNSP Certificate PDF viewer
-│   │   ├── Skills.jsx          # Tech stack & soft skills
-│   │   ├── FeaturedProject.jsx # Superstore highlight
-│   │   ├── Organization.jsx    # Org & leadership experience
-│   │   ├── Achievement.jsx     # Awards & achievements
-│   │   ├── Projects.jsx        # Full projects gallery
-│   │   ├── Certificates.jsx    # All certifications
-│   │   ├── Contact.jsx         # Contact form & social links
-│   │   ├── Navbar.jsx          # Navigation with language toggle
-│   │   ├── ThreeBackground.jsx # 3D animated background
-│   │   └── LanguageToggle.jsx  # EN/ID language switcher
-│   ├── context/
-│   │   └── LanguageContext.js  # Global language state
-│   ├── page.jsx                # Main page layout
-│   └── layout.js               # Root layout & metadata
-├── public/                     # Static assets (images, PDFs)
-└── package.json
+app/
+├── components/
+│   ├── Shell.jsx         # 3D canvas, loader, custom cursor, smooth scroll, reveals
+│   ├── Navbar.jsx, LanguageToggle.jsx, Footer.jsx
+│   ├── Hero.jsx, Profile.jsx, Skills.jsx
+│   ├── Apps.jsx, Devices.jsx          # app showcase in CSS-built iPhone and MacBook frames
+│   ├── Viewer.jsx        # embedded documents
+│   ├── Experience.jsx, Gallery.jsx    # work, leadership, activities, photo gallery
+│   ├── Stats.jsx, Credentials.jsx, Contact.jsx
+│   └── ui.jsx            # Words, Button, Magnetic, Label, ScrollText
+├── context/LanguageContext.js
+├── data/                 # content.js, site.js, brandPaths.js
+├── lib/
+│   ├── stage.js          # the Three.js stage
+│   └── motion.js         # anime.js reveals, chart drawing, counters
+├── layout.js, page.jsx, globals.css
+public/                   # images, logos, certificates, CV
 ```
 
----
+## About the app screenshots
 
-## 👤 About the Developer
+The screens in the Aplikasi section were captured from the apps themselves, running locally on generated data.
+Every figure, shop name, route, and log entry in them is simulated; none of it is real customer or personal data.
 
-**Adam Suvi, S.Si., C.DA**
-- 🎓 Bachelor of Mathematics — Universitas Andalas
-- 📜 BNSP Certified Data Analyst (C.DA)
-- 💼 Data Enthusiast & Data Analyst
-- 📍 Padang, Indonesia
+## Credits
 
-**Contact:**
-- 📧 Email: [adamsuvi7@gmail.com](mailto:adamsuvi7@gmail.com)
-- 💼 LinkedIn: [linkedin.com/in/adam-suvi7](https://linkedin.com/in/adam-suvi7)
-- 📱 WhatsApp: 0821-7162-5816
-- 📸 Instagram: [@adam_suvi](https://instagram.com/adam_suvi)
-- 🐙 GitHub: [@adamsuvi7](https://github.com/adamsuvi7)
-
----
-
-<div align="center">
-Made with ❤️ by Adam Suvi · <em>"Every dataset is a story waiting to be told."</em>
-</div>
+- The interaction concept and several of its patterns (a persistent 3D stage that changes pose per section, glass sections
+  over it, the trailing cursor, word-by-word text) are adapted from
+  [computerman-site.vercel.app](https://computerman-site.vercel.app/). The 3D model, palette, and content are this project's own.
+- Tool logos come from the Iconify `logos` and `vscode-icons` sets and Simple Icons. They are trademarks of their owners and
+  are shown only to name the tools used.

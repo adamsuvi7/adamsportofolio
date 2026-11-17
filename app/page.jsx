@@ -1,42 +1,34 @@
+import Shell from "./components/Shell";
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
+import Profile from "./components/Profile";
 import Skills from "./components/Skills";
-import FeaturedProject from "./components/FeaturedProject";
-import Organization from "./components/Organization";
-import Achievement from "./components/Achievement";
-import Projects from "./components/Projects";
-import Certificates from "./components/Certificates";
+import Apps from "./components/Apps";
+import Viewer from "./components/Viewer";
+import Experience from "./components/Experience";
+import Stats from "./components/Stats";
+import Credentials from "./components/Credentials";
 import Contact from "./components/Contact";
-import BnspCertificate from "./components/BnspCertificate";
+import Footer from "./components/Footer";
 
-import dynamic from 'next/dynamic';
-
-const ThreeBackground = dynamic(() => import('./components/ThreeBackground'), { ssr: false });
-
+// Sections marked `dark` are transparent, so the 3D stage shows through them;
+// `light` sections are frosted cream glass laid over it.
 export default function Home() {
     return (
-        <>
-            <ThreeBackground />
-            <section id="home">
+        <Shell>
+            <Navbar />
+            <main id="konten">
                 <Hero />
-            </section>
-            <section id="about">
-                <About />
-                <BnspCertificate />
+                <Profile />
                 <Skills />
-                <FeaturedProject />
-                <Organization />
-                <Achievement />
-            </section>
-            <section id="projects">
-                <Projects />
-            </section>
-            <section id="certificate">
-                <Certificates />
-            </section>
-            <section id="contact">
+                <Apps />
+                <Viewer />
+                <Experience />
+                <Stats />
+                <Credentials />
                 <Contact />
-            </section>
-        </>
+            </main>
+            <Footer />
+        </Shell>
     );
 }

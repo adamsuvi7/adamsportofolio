@@ -1,3 +1,24 @@
 [build]
   command = "npm run build"
   publish = "out"
+
+# The old sub-pages are now sections of the single page.
+[[redirects]]
+  from = "/about"
+  to = "/#profil"
+  status = 301
+
+[[redirects]]
+  from = "/projects"
+  to = "/#proyek"
+  status = 301
+
+[[redirects]]
+  from = "/certificate"
+  to = "/#kredensial"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/#kontak"
+  status = 301

@@ -1,6 +1,5 @@
-'use client';
-
-import { useEffect } from 'react';
+"use client";
+import { useEffect } from "react";
 
 export default function Error({ error, reset }) {
     useEffect(() => {
@@ -8,14 +7,11 @@ export default function Error({ error, reset }) {
     }, [error]);
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-midnight text-white p-4">
-            <h2 className="text-2xl font-bold mb-4 text-red-500">Something went wrong!</h2>
-            <p className="mb-4 text-gray-300">{error.message || "An unexpected error occurred."}</p>
-            <button
-                onClick={() => reset()}
-                className="px-4 py-2 bg-sky hover:bg-blue-600 rounded-lg transition-colors"
-            >
-                Try again
+        <div className="flex min-h-screen flex-col items-center justify-center px-5 text-center">
+            <h1 className="h2">Terjadi kesalahan</h1>
+            <p className="muted mt-3">Halaman gagal dimuat. Coba muat ulang.</p>
+            <button type="button" onClick={() => reset()} className="btn btn-light mt-6" style={{ paddingRight: 18 }}>
+                Coba lagi
             </button>
         </div>
     );
